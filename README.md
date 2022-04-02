@@ -1,1 +1,1 @@
-# GoPulse
+# Golang Pulse
