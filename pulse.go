@@ -11,7 +11,6 @@ type Pulse struct {
 }
 
 func (p *Pulse) Reset(d time.Duration) {
-	p.c <- time.Now()
 	p.ticker.Reset(d)
 }
 
@@ -26,7 +25,7 @@ func (p *Pulse) tick() {
 	}
 }
 
-func NewPulse(d time.Duration) *Pulse {
+func New(d time.Duration) *Pulse {
 	c := make(chan time.Time, 1)
 	t := time.NewTicker(d)
 
